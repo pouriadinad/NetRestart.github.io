@@ -3,33 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> NetRestart - آموزش</title>
+<title>NetRestart - آموزش</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 <style>
-  body { background-color: #0c1724; color: #e5e7eb; font-family: 'Vazirmatn', sans-serif; }
+  body { background-color: #0c1724; color: #e5e7eb; font-family: 'Vazirmatn', sans-serif; margin: 0; }
   a:hover { color: #38bdf8; }
   .back-to-top { position: fixed; bottom: 1.5rem; right: 1.5rem; font-size: 2.5rem; cursor: pointer; color: #38bdf8; }
   .card:hover { transform: translateY(-8px); box-shadow: 0 15px 25px rgba(0,0,0,0.5); }
   .section-title { border-left: 4px solid #38bdf8; padding-left: 0.75rem; }
+  .bg-header-edu { background-image: url('images/network-1.png'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative; }
 
-  /* Hero Section آموزشی با بک‌گراند تصویر */
-  .bg-header-edu {
-    background-image: url('images/network-1.png'); /* تصویر دلخواه خودتان */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
+  /* Header واکنش‌گرا و کوچک شدن در اسکرول */
+  header {
+    position: fixed;
+    width: 100%;
+    z-index: 50;
+    backdrop-blur: 10px;
+    background-color: rgba(12, 23, 36, 0.9);
+    border-bottom: 1px solid rgba(56, 189, 248, 0.4);
+    transition: all 0.3s ease-in-out;
+    padding: 1rem 0;
   }
+
+  header.scrolled {
+    padding: 0.3rem 0;
+    background-color: rgba(12, 23, 36, 0.8);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  }
+
+  header .logo {
+    transition: all 0.3s ease-in-out;
+  }
+
+  header.scrolled .logo {
+    transform: scale(0.7);
+  }
+
+  /* عکس‌های محتوا */
+  .content-img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .content-img {
+      max-height: 300px;
+    }
+  }
+
 </style>
 </head>
 <body id="top">
 
 <!-- Header -->
-<header class="fixed w-full z-50 backdrop-blur bg-[#0c1724]/90 shadow-md border-b border-sky-400/40">
-  <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+<header>
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-4">
     <div class="flex items-center gap-4">
-      <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-sky-400 to-cyan-300 flex items-center justify-center text-white font-bold">NR</div>
+      <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-sky-400 to-cyan-300 flex items-center justify-center text-white font-bold logo">NR</div>
       <div>
         <div class="text-lg font-bold text-white">NetRestart </div>
         <div class="text-xs text-slate-300">راهکارهای شبکه، امنیت و ارتباطات</div>
@@ -49,83 +83,58 @@
 
 <!-- Hero Section -->
 <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 pt-28 bg-header-edu">
-  <!-- Overlay -->
   <div class="absolute inset-0 bg-gradient-to-b from-[#0d1c33]/70 to-[#0a1424]/80"></div>
-  
   <h1 class="text-5xl font-extrabold text-sky-400 z-10 relative">NetRestart بخش آموزشی</h1>
   <p class="mt-4 max-w-2xl text-gray-300 z-10 relative">
-    مطالب آموزشی جامع و کاربردی درباره امنیت شبکه، زیرساخت، فایروال و آگاهی سایبری. با مطالعه این مطالب، دانش فنی خود را افزایش دهید و در محیط سازمانی حرفه‌ای عمل کنید. این بخش شامل راهنمایی‌ها، مثال‌های عملی و نکات تخصصی برای مهندسین شبکه و تیم‌های فناوری اطلاعات است.
+    مطالب آموزشی جامع و کاربردی درباره امنیت شبکه، زیرساخت، فایروال و آگاهی سایبری. با مطالعه این مطالب، دانش فنی خود را افزایش دهید و در محیط سازمانی حرفه‌ای عمل کنید.
   </p>
 </section>
 
 <!-- Educational Content -->
 <section class="py-16 max-w-7xl mx-auto px-6 space-y-12">
 
-  <!-- امن‌سازی شبکه -->
   <div class="bg-[#11223a] rounded-2xl p-8 shadow border border-sky-400/20 card transition-transform duration-300">
     <h2 class="text-3xl font-bold text-sky-400 mb-4 section-title">امن‌سازی شبکه</h2>
-    <div class="w-full aspect-[16/9] mb-6 shadow-lg rounded-xl overflow-hidden">
-      <img src="images/111.jpg" alt="امن‌سازی شبکه" class="w-full h-full object-cover">
-    </div>
+    <img src="images/111.jpg" alt="امن‌سازی شبکه" class="content-img mb-4">
     <p class="text-gray-300 leading-relaxed mb-4">
-      امن‌سازی شبکه شامل مجموعه‌ای از اقدامات فنی، مدیریتی و نرم‌افزاری است تا داده‌ها و منابع سازمانی در برابر تهدیدات داخلی و خارجی محافظت شوند. این اقدامات شامل رمزنگاری اطلاعات حساس، مدیریت دقیق دسترسی کاربران، ایجاد سیاست‌های امنیتی و پیکربندی امن سرورها و تجهیزات شبکه است.
-    </p>
-    <p class="text-gray-300 leading-relaxed mb-4">
-      فرآیند امنیت شبکه به صورت مداوم انجام می‌شود. این شامل مانیتورینگ شبکه، بررسی لاگ‌ها، بروزرسانی سیستم‌ها، اعمال پچ‌های امنیتی و آموزش کاربران در زمینه امنیت سایبری است. پیاده‌سازی سیاست‌های امنیتی قوی و چندلایه باعث کاهش خطر نفوذ و جلوگیری از سوءاستفاده‌های احتمالی می‌شود.
+      امن‌سازی شبکه شامل اقدامات فنی و مدیریتی است تا داده‌ها و منابع سازمانی در برابر تهدیدات داخلی و خارجی محافظت شود.
+      رمزنگاری اطلاعات، مدیریت دسترسی‌ها، و پیکربندی امن سرورها و تجهیزات شبکه از جمله این اقدامات است.
     </p>
     <p class="text-gray-300 leading-relaxed">
-      در نهایت، امن‌سازی شبکه یک فرآیند مستمر است که با ترکیب فناوری، آموزش و مدیریت صحیح می‌تواند امنیت سازمان را تضمین کند و از خسارت‌های احتمالی جلوگیری کند.
+      امنیت شبکه یک فرآیند مستمر است و نیازمند پایش، بروزرسانی سیستم‌ها و آموزش کاربران می‌باشد. پیاده‌سازی سیاست‌های امنیتی قوی باعث جلوگیری از نفوذ و سوءاستفاده می‌شود.
     </p>
   </div>
 
-  <!-- معماری شبکه -->
   <div class="bg-[#11223a] rounded-2xl p-8 shadow border border-sky-400/20 card transition-transform duration-300">
     <h2 class="text-3xl font-bold text-sky-400 mb-4 section-title">معماری شبکه</h2>
-    <div class="w-full aspect-[16/9] mb-6 shadow-lg rounded-xl overflow-hidden">
-      <img src="images/network3.JPG" alt="معماری شبکه" class="w-full h-full object-cover">
-    </div>
+    <img src="images/network3.JPG" alt="معماری شبکه" class="content-img mb-4">
     <p class="text-gray-300 leading-relaxed mb-4">
-      معماری شبکه ساختار کلی شبکه سازمان را مشخص می‌کند. این شامل طراحی توپولوژی مناسب، تقسیم‌بندی VLAN، انتخاب تجهیزات شبکه و تعریف مدل‌های لایه‌ای می‌شود. یک معماری اصولی باعث بهبود عملکرد، امنیت و مقیاس‌پذیری شبکه خواهد شد.
-    </p>
-    <p class="text-gray-300 leading-relaxed mb-4">
-      انتخاب توپولوژی مناسب، ایجاد مسیرهای رده‌بندی و تفکیک منطقی شبکه، باعث می‌شود مدیریت شبکه ساده‌تر و نگهداری آن راحت‌تر باشد. همچنین، معماری شبکه مناسب باعث کاهش زمان Downtime و افزایش بهره‌وری سازمان خواهد شد.
+      معماری شبکه ساختار کلی شبکه سازمان را مشخص می‌کند. توپولوژی مناسب، تقسیم‌بندی VLAN و مدل لایه‌ای باعث بهبود عملکرد و امنیت می‌شوند.
     </p>
     <p class="text-gray-300 leading-relaxed">
-      معماری شبکه نه تنها به بهبود عملکرد کمک می‌کند، بلکه به افزایش امنیت و جلوگیری از نفوذهای احتمالی نیز کمک می‌کند. برنامه‌ریزی دقیق، مستندسازی کامل و رعایت استانداردهای جهانی برای موفقیت هر پروژه شبکه حیاتی است.
+      طراحی اصولی شبکه باعث مدیریت آسان، مقیاس‌پذیری و پایداری بالا می‌شود و بهره‌وری را افزایش می‌دهد.
     </p>
   </div>
 
-  <!-- پیکربندی فایروال -->
   <div class="bg-[#11223a] rounded-2xl p-8 shadow border border-sky-400/20 card transition-transform duration-300">
     <h2 class="text-3xl font-bold text-sky-400 mb-4 section-title">پیکربندی فایروال</h2>
-    <div class="w-full aspect-[16/9] mb-6 shadow-lg rounded-xl overflow-hidden">
-      <img src="images/what-is-a-firewall.png" alt="پیکربندی فایروال" class="w-full h-full object-cover">
-    </div>
+    <img src="images/what-is-a-firewall.png" alt="پیکربندی فایروال" class="content-img mb-4">
     <p class="text-gray-300 leading-relaxed mb-4">
-      فایروال اولین خط دفاعی شبکه است. پیکربندی صحیح آن شامل تعریف قوانین دسترسی، جلوگیری از ترافیک مشکوک و مانیتورینگ مداوم است. فایروال می‌تواند حملات بیرونی را محدود کرده و کاربران غیرمجاز را مسدود کند.
-    </p>
-    <p class="text-gray-300 leading-relaxed mb-4">
-      علاوه بر قوانین دسترسی، گزارش‌گیری منظم، پایش فعالیت‌ها و تحلیل ترافیک از موارد حیاتی در مدیریت فایروال است. این اقدامات به شما کمک می‌کنند تهدیدات بالقوه را شناسایی و پیشگیری کنید.
+      فایروال اولین خط دفاعی شبکه است. پیکربندی دقیق آن شامل قوانین دسترسی، جلوگیری از ترافیک مشکوک و مانیتورینگ مداوم می‌باشد.
     </p>
     <p class="text-gray-300 leading-relaxed">
-      یک فایروال قوی و مدیریت‌شده، امنیت شبکه را به میزان قابل توجهی افزایش می‌دهد و خطر نفوذ مهاجمین و حملات سایبری را کاهش می‌دهد.
+      سیاست‌های امنیتی درست، نفوذ مهاجمین را کاهش می‌دهد و امنیت کلی شبکه را تضمین می‌کند. گزارش‌گیری و پایش مداوم تهدیدات را شناسایی می‌کند.
     </p>
   </div>
 
-  <!-- آگاهی سایبری -->
   <div class="bg-[#11223a] rounded-2xl p-8 shadow border border-sky-400/20 card transition-transform duration-300">
     <h2 class="text-3xl font-bold text-sky-400 mb-4 section-title">آگاهی سایبری</h2>
-    <div class="w-full aspect-[16/9] mb-6 shadow-lg rounded-xl overflow-hidden">
-      <img src="images/siberi.JPG" alt="آگاهی سایبری" class="w-full h-full object-cover">
-    </div>
+    <img src="images/siberi.JPG" alt="آگاهی سایبری" class="content-img mb-4">
     <p class="text-gray-300 leading-relaxed mb-4">
-      هیچ سیستمی بدون کاربران آگاه و آموزش دیده امن نیست. آموزش کارکنان در زمینه شناسایی ایمیل‌های فیشینگ، مدیریت رمزهای عبور، رعایت سیاست‌های داخلی و نحوه برخورد با تهدیدات سایبری، از اصلی‌ترین اقدامات امنیتی است.
-    </p>
-    <p class="text-gray-300 leading-relaxed mb-4">
-      ارتقای آگاهی کاربران باعث کاهش خطاهای انسانی و پیشگیری از نفوذهای داخلی می‌شود. فرهنگ‌سازی امنیتی و آموزش مداوم، کلید کاهش ریسک‌های سایبری در سازمان است.
+      هیچ سیستمی بدون کاربران آگاه و آموزش دیده امن نیست. آموزش کارکنان درباره ایمیل‌های فیشینگ، استفاده صحیح از رمزها و رعایت سیاست‌های داخلی از مهم‌ترین اقدامات است.
     </p>
     <p class="text-gray-300 leading-relaxed">
-      ترکیب آموزش کاربران، سیاست‌های امنیتی و ابزارهای فناوری، امنیت شبکه را بهبود می‌بخشد و سازمان را در برابر تهدیدات سایبری مقاوم می‌کند.
+      فرهنگ امنیتی قوی از خطاهای انسانی جلوگیری کرده و باعث امنیت پایدار سازمان می‌شود. آموزش مداوم، کلید کاهش ریسک سایبری است.
     </p>
   </div>
 
@@ -133,6 +142,18 @@
 
 <!-- Back to top -->
 <a href="#top" class="back-to-top"><i class='bx bx-up-arrow-circle'></i></a>
+
+<script>
+  // کوچک شدن هدر هنگام اسکرول
+  const header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+</script>
 
 </body>
 </html>
