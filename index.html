@@ -26,16 +26,34 @@
         <div class="text-xs text-slate-300">راهکارهای شبکه، امنیت و ارتباطات</div>
       </div>
     </div>
+
     <nav class="hidden md:flex items-center gap-6 text-sm">
       <a href="#services" class="hover:text-sky-400 transition">خدمات</a>
       <a href="#portfolio" class="hover:text-sky-400 transition">پروژه‌ها</a>
       <a href="#team" class="hover:text-sky-400 transition">تیم ما</a>
       <a href="#faq" class="hover:text-sky-400 transition">سؤالات متداول</a>
       <a href="#contact" class="hover:text-sky-400 transition">تماس با ما</a>
-      <a href="educational.html" className="text-gray-300 hover:text-sky-400 transition">آموزشی</a>
+      <a href="educational.html" class="hover:text-sky-400 transition">آموزشی</a>
     </nav>
+
+    <!-- ✅ دکمه موبایل -->
+    <button id="menu-btn" class="md:hidden text-sky-400 text-3xl">
+      <i class='bx bx-menu'></i>
+    </button>
+
   </div>
 </header>
+
+<!-- ✅ منوی موبایل -->
+<div id="mobile-menu" class="hidden flex-col bg-[#0c1724] text-center py-4 space-y-4 border-b border-sky-400/30 md:hidden">
+  <a href="#services" class="block text-gray-300 hover:text-sky-400">خدمات</a>
+  <a href="#portfolio" class="block text-gray-300 hover:text-sky-400">پروژه‌ها</a>
+  <a href="#team" class="block text-gray-300 hover:text-sky-400">تیم ما</a>
+  <a href="#faq" class="block text-gray-300 hover:text-sky-400">سؤالات متداول</a>
+  <a href="#contact" class="block text-gray-300 hover:text-sky-400">تماس با ما</a>
+  <a href="educational.html" class="block text-gray-300 hover:text-sky-400">آموزشی</a>
+</div>
+
 
 <!-- Hero -->
 <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-gradient-to-b from-[#0d1c33] to-[#0a1424] pt-24">
@@ -130,7 +148,7 @@
       <p class="text-gray-400 mt-2">با تماس با تیم فروش و ثبت درخواست پشتیبانی، کارشناسان ما در کوتاه‌ترین زمان پاسخگو خواهند بود.</p>
     </div>
     <div class="card bg-[#11223a] p-4 rounded-xl shadow border border-sky-400/20">
-      <h3 class="text-lg text-sky-300 font-semibold">آیا امکان بازدید حضوری از پروژه‌ها وجود دارد؟</h3>
+      <h3 class="text-lg text-sky-300 font-semibold">آیا امکان بازدید حضوری از پروژه‌ها وجود دارد?</h3>
       <p class="text-gray-400 mt-2">بله، با هماهنگی قبلی می‌توانید از پروژه‌های در حال اجرا یا تکمیل‌شده بازدید کنید.</p>
     </div>
   </div>
@@ -167,7 +185,7 @@
       <form class="space-y-4">
         <input type="text" placeholder="نام و نام خانوادگی" class="w-full p-3 rounded bg-[#0f1c2d] border border-sky-400/20 text-gray-300" />
         <input type="text" placeholder="ایمیل یا تلفن" class="w-full p-3 rounded bg-[#0f1c2d] border border-sky-400/20 text-gray-300" />
-        <textarea rows="4" placeholder="پیام شما" class="w-full p-3 rounded bg-[#0f1c2d] border border-sky-400/20 text-gray-300"></textarea>
+        <textarea rows="4" placeholder="پیام شما" class="w-full p-3 rounded	bg-[#0f1c2d] border border-sky-400/20 text-gray-300"></textarea>
         <div class="text-right">
           <button type="submit" class="bg-sky-400 text-[#0c1724] px-6 py-2 rounded font-semibold hover:bg-sky-300 transition">ارسال پیام</button>
         </div>
@@ -176,10 +194,16 @@
   </div>
 </section>
 
-
-
 <!-- Back to top -->
 <a href="#top" class="back-to-top"><i class='bx bxs-up-arrow'></i></a>
+
+<!-- ✅ اسکریپت باز و بسته شدن منوی موبایل -->
+<script>
+  document.getElementById("menu-btn").addEventListener("click", () => {
+    const menu = document.getElementById("mobile-menu");
+    menu.classList.toggle("hidden");
+  });
+</script>
 
 </body>
 </html>
