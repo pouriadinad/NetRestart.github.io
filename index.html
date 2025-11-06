@@ -10,250 +10,229 @@
 <style>
   body { background-color: #0c1724; color: #e5e7eb; font-family: Vazirmatn, sans-serif; scroll-behavior: smooth; }
   a:hover { color: #38bdf8; }
+  .back-to-top { position: fixed; bottom: 1.5rem; right: 1.5rem; font-size: 2.5rem; cursor: pointer; color: #38bdf8; }
+  .card:hover { transform: translateY(-6px); transition: 0.3s ease-in-out; }
+  .section-title { color: #38bdf8; font-size: 2rem; font-weight: 700; margin-bottom: 2rem; text-align: center; }
 
-  /* ✅ موبایل: منوی تمام‌صفحه */
+  /* ✅ استایل منوی موبایل فول اسکرین شبیه توسینو */
   #mobile-menu {
-    position: fixed;
-    top: 0; right: 0;
-    width: 100%;
-    height: 0;
-    overflow: hidden;
-    background: #0c1724;
-    opacity: 0;
-    transition: .35s;
-    z-index: 100;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-  }
-  #mobile-menu.active {
-    height: 100vh;
-    opacity: 1;
-  }
-
-  .card { transition: .3s ease; }
-  .card:hover { transform: translateY(-6px); }
-
-  .back-to-top {
-    position: fixed;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    font-size: 2.4rem;
-    color: #38bdf8;
+    transition: .3s ease-in-out;
   }
 </style>
 </head>
-
 <body id="top">
 
-<!-- ✅ هدر -->
 <header class="fixed w-full z-50 backdrop-blur bg-[#0c1724]/90 shadow-md border-b border-sky-400/40">
   <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
-    <div class="flex items-center gap-3">
-      <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-sky-400 to-cyan-300 flex items-center justify-center font-bold text-white">
-        NR
-      </div>
-      <div class="leading-tight">
-        <div class="text-white font-bold">NetRestart</div>
+    <div class="flex items-center gap-4">
+      <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-sky-400 to-cyan-300 flex items-center justify-center text-white font-bold">NR</div>
+      <div>
+        <div class="text-lg font-bold text-white">NetRestart</div>
         <div class="text-xs text-slate-300">راهکارهای شبکه، امنیت و ارتباطات</div>
       </div>
     </div>
 
+    <!-- ✅ منوی دسکتاپ -->
     <nav class="hidden md:flex items-center gap-6 text-sm">
-      <a href="#services">خدمات</a>
-      <a href="#portfolio">پروژه‌ها</a>
-      <a href="#team">تیم ما</a>
-      <a href="#faq">سؤالات متداول</a>
-      <a href="#contact">تماس با ما</a>
-      <a href="educational.html">آموزشی</a>
+      <a href="#services" class="hover:text-sky-400 transition">خدمات</a>
+      <a href="#portfolio" class="hover:text-sky-400 transition">پروژه‌ها</a>
+      <a href="#team" class="hover:text-sky-400 transition">تیم ما</a>
+      <a href="#faq" class="hover:text-sky-400 transition">سؤالات متداول</a>
+      <a href="#contact" class="hover:text-sky-400 transition">تماس با ما</a>
+      <a href="educational.html" class="hover:text-sky-400 transition">آموزشی</a>
     </nav>
 
-    <button id="menu-btn" class="md:hidden text-3xl text-sky-400">
-      <i class='bx bx-menu' id="menu-icon"></i>
+    <!-- ✅ دکمه منوی موبایل -->
+    <button class="md:hidden text-sky-400 text-3xl" onclick="openMenu()">
+      <i class='bx bx-menu'></i>
     </button>
+
   </div>
 </header>
 
-<!-- ✅ منوی موبایل تمام‌صفحه -->
-<div id="mobile-menu">
-  <a href="#services" class="text-2xl py-3">خدمات</a>
-  <a href="#portfolio" class="text-2xl py-3">پروژه‌ها</a>
-  <a href="#team" class="text-2xl py-3">تیم ما</a>
-  <a href="#faq" class="text-2xl py-3">سؤالات متداول</a>
-  <a href="#contact" class="text-2xl py-3">تماس با ما</a>
-  <a href="educational.html" class="text-2xl py-3">آموزشی</a>
+<!-- ✅✅ منوی موبایل فول اسکرین شبیه توسینو ✅✅ -->
+<div id="mobile-menu"
+     class="fixed inset-0 bg-[#0c1724] z-[200] hidden flex-col pt-24 pb-10 px-6 overflow-y-auto">
+
+  <button class="absolute top-5 right-5 text-3xl text-sky-400" onclick="closeMenu()">
+    <i class='bx bx-x'></i>
+  </button>
+
+  <div class="flex flex-col gap-4 text-xl leading-loose">
+
+    <a onclick="closeMenu()" href="#top" class="flex items-center gap-2 py-3 border-b border-sky-400/20">
+      <i class='bx bx-home text-2xl'></i> صفحه اصلی
+    </a>
+
+    <a onclick="closeMenu()" href="#services" class="flex items-center gap-2 py-3 border-b border-sky-400/20">
+      <i class='bx bx-cog text-2xl'></i> خدمات ما
+    </a>
+
+    <a onclick="closeMenu()" href="#portfolio" class="flex items-center gap-2 py-3 border-b border-sky-400/20">
+      <i class='bx bx-layer text-2xl'></i> پروژه‌ها
+    </a>
+
+    <a onclick="closeMenu()" href="#team" class="flex items-center gap-2 py-3 border-b border-sky-400/20">
+      <i class='bx bx-group text-2xl'></i> تیم ما
+    </a>
+
+    <a onclick="closeMenu()" href="#faq" class="flex items-center gap-2 py-3 border-b border-sky-400/20">
+      <i class='bx bx-help-circle text-2xl'></i> سوالات متداول
+    </a>
+
+    <a onclick="closeMenu()" href="educational.html" class="flex items-center gap-2 py-3 border-b border-sky-400/20">
+      <i class='bx bx-book text-2xl'></i> بخش آموزشی
+    </a>
+
+    <a onclick="closeMenu()" href="#contact" class="flex items-center gap-2 py-3">
+      <i class='bx bx-phone text-2xl'></i> تماس با ما
+    </a>
+  </div>
 </div>
 
-<!-- ✅ Hero -->
-<section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-28">
-  <h1 class="text-4xl md:text-6xl font-extrabold text-sky-400">NetRestart</h1>
-  <p class="mt-4 max-w-md text-gray-300 text-lg">
-    ارائه راه‌حل‌های زیرساخت، امنیت و ارتباطات برای سازمان‌ها — طراحی، اجرا و پشتیبانی حرفه‌ای.
-  </p>
+
+<section class="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-gradient-to-b from-[#0d1c33] to-[#0a1424] pt-24">
+  <h1 class="text-5xl font-extrabold text-sky-400">NetRestart</h1>
+  <p class="mt-4 max-w-2xl text-gray-300">ارائه دهندهٔ راه‌حل‌های زیرساختی، امنیتی و ارتباطی برای سازمان‌ها — طراحی، اجرا و پشتیبانی با استانداردهای جهانی.</p>
 </section>
 
-<!-- ✅ خدمات -->
 <section id="services" class="py-16 bg-[#0f1c2d]">
-  <h2 class="text-center text-sky-400 text-3xl font-bold mb-12">خدمات ما</h2>
-
-  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-5">
-    <div class="card bg-[#11223a] p-6 rounded-2xl border border-sky-400/20">
-      <h3 class="text-xl text-sky-300 font-semibold mb-2">نصب و پشتیبانی سانترال و ویپ</h3>
-      <p class="text-gray-400 text-sm">راه‌اندازی سیستم‌های VoIP با کیفیت بالا.</p>
+  <h2 class="section-title">خدمات ما</h2>
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6">
+    <div class="card bg-[#11223a] p-6 rounded-2xl shadow border border-sky-400/20">
+      <h3 class="text-xl font-semibold text-sky-300 mb-2">نصب و پشتیبانی سانترال و ویپ</h3>
+      <p class="text-gray-400 text-sm leading-relaxed">راه‌اندازی سیستم‌های ارتباطی مبتنی بر VoIP با کیفیت بالا.</p>
     </div>
-    <div class="card bg-[#11223a] p-6 rounded-2xl border border-sky-400/20">
-      <h3 class="text-xl text-sky-300 font-semibold mb-2">طراحی و پیاده‌سازی شبکه</h3>
-      <p class="text-gray-400 text-sm">کابل‌کشی، سوییچینگ و طراحی توپولوژی.</p>
+    <div class="card bg-[#11223a] p-6 rounded-2xl shadow border border-sky-400/20">
+      <h3 class="text-xl font-semibold text-sky-300 mb-2">طراحی و پیاده‌سازی شبکه</h3>
+      <p class="text-gray-400 text-sm leading-relaxed">کابل‌کشی، سوییچینگ و طراحی توپولوژی برای عملکرد بهینه.</p>
     </div>
-    <div class="card bg-[#11223a] p-6 rounded-2xl border border-sky-400/20">
-      <h3 class="text-xl text-sky-300 font-semibold mb-2">کانفیگ سوییچ و فایروال</h3>
-      <p class="text-gray-400 text-sm">VLAN، امنیت، مدیریت تجهیزات.</p>
+    <div class="card bg-[#11223a] p-6 rounded-2xl shadow border border-sky-400/20">
+      <h3 class="text-xl font-semibold text-sky-300 mb-2">کانفیگ سوییچ و فایروال</h3>
+      <p class="text-gray-400 text-sm leading-relaxed">پیکربندی تجهیزات مدیریتی، VLAN و قواعد امنیتی.</p>
     </div>
-    <div class="card bg-[#11223a] p-6 rounded-2xl border border-sky-400/20">
-      <h3 class="text-xl text-sky-300 font-semibold mb-2">پشتیبانی و مانیتورینگ 24/7</h3>
-      <p class="text-gray-400 text-sm">پایش مداوم و واکنش سریع.</p>
+    <div class="card bg-[#11223a] p-6 rounded-2xl shadow border border-sky-400/20">
+      <h3 class="text-xl font-semibold text-sky-300 mb-2">پشتیبانی و مانیتورینگ 24/7</h3>
+      <p class="text-gray-400 text-sm leading-relaxed">پایش، نگهداری و واکنش سریع به حوادث شبکه‌ای.</p>
     </div>
-    <div class="card bg-[#11223a] p-6 rounded-2xl border border-sky-400/20">
-      <h3 class="text-xl text-sky-300 font-semibold mb-2">مشاوره زیرساخت و امنیت</h3>
-      <p class="text-gray-400 text-sm">تحلیل و ارائه راهکار بهینه.</p>
+    <div class="card bg-[#11223a] p-6 rounded-2xl shadow border border-sky-400/20">
+      <h3 class="text-xl font-semibold text-sky-300 mb-2">مشاوره زیرساخت و امنیت</h3>
+      <p class="text-gray-400 text-sm leading-relaxed">آنالیز، ارزیابی و ارائه طرح‌های بهبود زیرساخت.</p>
     </div>
-    <div class="card bg-[#11223a] p-6 rounded-2xl border border-sky-400/20">
-      <h3 class="text-xl text-sky-300 font-semibold mb-2">آموزش تخصصی</h3>
-      <p class="text-gray-400 text-sm">دوره‌های عملی برای تیم IT.</p>
+    <div class="card bg-[#11223a] p-6 rounded-2xl shadow border border-sky-400/20">
+      <h3 class="text-xl font-semibold text-sky-300 mb-2">آموزش تخصصی</h3>
+      <p class="text-gray-400 text-sm leading-relaxed">دوره‌های عملی برای تیم IT و مدیران فناوری.</p>
     </div>
   </div>
 </section>
 
-<!-- ✅ پروژه‌ها -->
 <section id="portfolio" class="py-16">
-  <h2 class="text-center text-sky-400 text-3xl font-bold mb-12">پروژه‌ها</h2>
-
-  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-5">
-    <div class="card bg-[#11223a] rounded-2xl overflow-hidden border border-sky-400/20">
-      <img src="/images/portfolio1.jpg" class="w-full h-56 object-cover">
-      <div class="p-4 text-center text-sky-300 font-semibold">پیاده‌سازی شبکه شرکتی</div>
+  <h2 class="section-title">پروژه‌ها</h2>
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6">
+    <div class="card bg-[#11223a] rounded-2xl overflow-hidden shadow border border-sky-400/20">
+      <img src="/images/portfolio1.jpg" alt="پیاده‌سازی شبکه شرکتی" class="w-full h-64 object-cover">
+      <div class="p-4">
+        <h3 class="text-xl text-sky-300 font-semibold">پیاده‌سازی شبکه شرکتی</h3>
+      </div>
     </div>
-
-    <div class="card bg-[#11223a] rounded-2xl overflow-hidden border border-sky-400/20">
-      <img src="/images/portfolio2.jpg" class="w-full h-56 object-cover">
-      <div class="p-4 text-center text-sky-300 font-semibold">راه‌اندازی مرکز داده</div>
+    <div class="card bg-[#11223a] rounded-2xl overflow-hidden shadow border border-sky-400/20">
+      <img src="/images/portfolio2.jpg" alt="راه‌اندازی مرکز داده" class="w-full h-64 object-cover">
+      <div class="p-4">
+        <h3 class="text-xl text-sky-300 font-semibold">راه‌اندازی مرکز داده</h3>
+      </div>
     </div>
-
-    <div class="card bg-[#11223a] rounded-2xl overflow-hidden border border-sky-400/20">
-      <img src="/images/portfolio3.jpg" class="w-full h-56 object-cover">
-      <div class="p-4 text-center text-sky-300 font-semibold">پیکربندی VoIP</div>
+    <div class="card bg-[#11223a] rounded-2xl overflow-hidden shadow border border-sky-400/20">
+      <img src="/images/portfolio3.jpg" alt="پیکربندی VoIP" class="w-full h-64 object-cover">
+      <div class="p-4">
+        <h3 class="text-xl text-sky-300 font-semibold">پیکربندی VoIP</h3>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ✅ تیم -->
 <section id="team" class="py-16 bg-[#0f1c2d]">
-  <h2 class="text-center text-sky-400 text-3xl font-bold mb-12">تیم ما</h2>
-
-  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-5">
-    <div class="card bg-[#11223a] p-6 rounded-2xl text-center border border-sky-400/20">
-      <img src="/images/team1.jpg" class="w-28 h-28 rounded-full mx-auto object-cover mb-4">
+  <h2 class="section-title">تیم ما</h2>
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6">
+    <div class="card bg-[#11223a] p-6 rounded-2xl shadow border border-sky-400/20 text-center">
+      <img src="/images/team1.jpg" alt="مهندس رستگار" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
       <h3 class="text-xl text-sky-300 font-semibold">مهندس رستگار</h3>
-      <p class="text-gray-400 text-sm">مدیر شبکه و امنیت</p>
+      <p class="text-gray-400">مدیر شبکه و امنیت</p>
     </div>
-
-    <div class="card bg-[#11223a] p-6 rounded-2xl text-center border border-sky-400/20">
-      <img src="/images/team2.jpg" class="w-28 h-28 rounded-full mx-auto object-cover mb-4">
+    <div class="card bg-[#11223a] p-6 rounded-2xl shadow border border-sky-400/20 text-center">
+      <img src="/images/team2.jpg" alt="مهندس صالحی" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
       <h3 class="text-xl text-sky-300 font-semibold">مهندس صالحی</h3>
-      <p class="text-gray-400 text-sm">کارشناس زیرساخت</p>
+      <p class="text-gray-400">کارشناس زیرساخت</p>
     </div>
-
-    <div class="card bg-[#11223a] p-6 rounded-2xl text-center border border-sky-400/20">
-      <img src="/images/team3.jpg" class="w-28 h-28 rounded-full mx-auto object-cover mb-4">
+    <div class="card bg-[#11223a] p-6 rounded-2xl shadow border border-sky-400/20 text-center">
+      <img src="/images/team3.jpg" alt="مهندس رضایی" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
       <h3 class="text-xl text-sky-300 font-semibold">مهندس رضایی</h3>
-      <p class="text-gray-400 text-sm">کارشناس فایروال</p>
+      <p class="text-gray-400">کارشناس فایروال</p>
     </div>
   </div>
 </section>
 
-<!-- ✅ سوالات -->
 <section id="faq" class="py-16">
-  <h2 class="text-center text-sky-400 text-3xl font-bold mb-12">سؤالات متداول</h2>
-
-  <div class="max-w-4xl mx-auto px-5 space-y-4">
-    <div class="card bg-[#11223a] p-5 rounded-xl border border-sky-400/20">
-      <h3 class="text-lg text-sky-300 font-semibold">چگونه خدمات پشتیبانی دریافت کنم؟</h3>
-      <p class="text-gray-400 mt-2">با تماس با تیم فروش و ثبت درخواست ...</p>
+  <h2 class="section-title">سؤالات متداول</h2>
+  <div class="max-w-7xl mx-auto px-6 space-y-4">
+    <div class="card bg-[#11223a] p-4 rounded-xl shadow border border-sky-400/20">
+      <h3 class="text-lg text-sky-300 font-semibold">چگونه می‌توانم خدمات پشتیبانی دریافت کنم؟</h3>
+      <p class="text-gray-400 mt-2">با تماس با تیم فروش و ثبت درخواست...</p>
     </div>
-    <div class="card bg-[#11223a] p-5 rounded-xl border border-sky-400/20">
-      <h3 class="text-lg text-sky-300 font-semibold">آیا امکان بازدید حضوری وجود دارد؟</h3>
-      <p class="text-gray-400 mt-2">بله، با هماهنگی قبلی ...</p>
+    <div class="card bg-[#11223a] p-4 rounded-xl shadow border border-sky-400/20">
+      <h3 class="text-lg text-sky-300 font-semibold">آیا امکان بازدید حضوری از پروژه‌ها وجود دارد?</h3>
+      <p class="text-gray-400 mt-2">بله، با هماهنگی قبلی...</p>
     </div>
   </div>
 </section>
 
-<!-- ✅ نظرات مشتریان -->
 <section id="testimonials" class="py-16 bg-[#0f1c2d]">
-  <h2 class="text-center text-sky-400 text-3xl font-bold mb-12">نظرات مشتریان</h2>
-
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-5">
-    <div class="card bg-[#11223a] p-6 rounded-2xl border border-sky-400/20">
-      <p class="text-gray-300 leading-relaxed">“NetRestart با دقت و سرعت پروژه شبکه ما را اجرا کرد.”</p>
+  <h2 class="section-title">نظرات مشتریان</h2>
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-6">
+    <div class="card bg-[#11223a] p-6 rounded-2xl shadow border border-sky-400/20">
+      <p class="text-gray-400 leading-relaxed">“NetRestart با دقت و سرعت پروژه شبکه ما را اجرا و پشتیبانی کرد.”</p>
       <h3 class="text-xl text-sky-300 font-semibold mt-3">شرکت فناوری آریا</h3>
     </div>
-
-    <div class="card bg-[#11223a] p-6 rounded-2xl border border-sky-400/20">
-      <p class="text-gray-300 leading-relaxed">“پشتیبانی حرفه‌ای و پاسخگویی سریع؛ تجربه عالی.”</p>
+    <div class="card bg-[#11223a] p-6 rounded-2xl shadow border border-sky-400/20">
+      <p class="text-gray-400 leading-relaxed">“پشتیبانی حرفه‌ای و پاسخگویی سریع؛ تجربه‌ای مطمئن.”</p>
       <h3 class="text-xl text-sky-300 font-semibold mt-3">سازمان توسعه نوین</h3>
     </div>
   </div>
 </section>
 
-<!-- ✅ تماس با ما -->
 <section id="contact" class="py-16">
-  <h2 class="text-center text-sky-400 text-3xl font-bold mb-12">تماس با ما</h2>
-
-  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-5">
-    <div class="card bg-[#11223a] p-6 rounded-2xl border border-sky-400/20">
+  <h2 class="section-title">تماس با ما</h2>
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-6">
+    <div class="card bg-[#11223a] p-6 rounded-2xl shadow border border-sky-400/20">
       <h3 class="text-xl text-sky-300 font-semibold mb-4">اطلاعات تماس</h3>
-      <p class="text-gray-400">آدرس: تهران، شهرک صنعتی</p>
+      <p class="text-gray-400">آدرس: تهران - شهرک صنعتی</p>
       <p class="text-gray-400">تلفن: +98 21 1234 5678</p>
       <p class="text-gray-400">ایمیل: info@shabakeparsan.ir</p>
-      <p class="text-gray-400 mt-2">ساعات پاسخگویی: شنبه تا چهارشنبه 9 تا 17</p>
+      <p class="text-gray-400 mt-2">ساعات پاسخگویی: شنبه تا چهارشنبه 9 صبح تا 5 بعدازظهر</p>
     </div>
 
-    <div class="card bg-[#11223a] p-6 rounded-2xl border border-sky-400/20">
+    <div class="card bg-[#11223a] p-6 rounded-2xl shadow border border-sky-400/20">
       <h3 class="text-xl text-sky-300 font-semibold mb-4">فرم تماس</h3>
       <form class="space-y-4">
         <input type="text" placeholder="نام و نام خانوادگی" class="w-full p-3 rounded bg-[#0f1c2d] border border-sky-400/20 text-gray-300" />
         <input type="text" placeholder="ایمیل یا تلفن" class="w-full p-3 rounded bg-[#0f1c2d] border border-sky-400/20 text-gray-300" />
         <textarea rows="4" placeholder="پیام شما" class="w-full p-3 rounded bg-[#0f1c2d] border border-sky-400/20 text-gray-300"></textarea>
         <div class="text-right">
-          <button class="bg-sky-400 text-[#0c1724] px-6 py-2 rounded font-semibold hover:bg-sky-300 transition">ارسال پیام</button>
+          <button type="submit" class="bg-sky-400 text-[#0c1724] px-6 py-2 rounded font-semibold hover:bg-sky-300 transition">ارسال پیام</button>
         </div>
       </form>
     </div>
   </div>
 </section>
 
-<!-- ✅ دکمه اسکرول به بالا -->
 <a href="#top" class="back-to-top"><i class='bx bxs-up-arrow'></i></a>
 
-<!-- ✅ اسکریپت -->
 <script>
-  const btn = document.getElementById("menu-btn");
-  const menu = document.getElementById("mobile-menu");
-  const icon = document.getElementById("menu-icon");
-
-  btn.addEventListener("click", () => {
-    menu.classList.toggle("active");
-    icon.classList.toggle("bx-x");
-    icon.classList.toggle("bx-menu");
-  });
-
-  document.querySelectorAll("#mobile-menu a").forEach(link => {
-    link.addEventListener("click", () => {
-      menu.classList.remove("active");
-      icon.classList.add("bx-menu");
-      icon.classList.remove("bx-x");
-    });
-  });
+  function openMenu() {
+    document.getElementById("mobile-menu").classList.remove("hidden");
+  }
+  function closeMenu() {
+    document.getElementById("mobile-menu").classList.add("hidden");
+  }
 </script>
 
 </body>
