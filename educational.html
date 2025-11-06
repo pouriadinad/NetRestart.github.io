@@ -13,7 +13,7 @@
   .card:hover { transform: translateY(-8px); box-shadow: 0 15px 25px rgba(0,0,0,0.5); }
   .section-title { border-left: 4px solid #38bdf8; padding-left: 0.75rem; }
 
-  /* ✅ همان استایل منوی موبایل از صفحه اول */
+  /* ✅ Mobile Menu Style (مثل صفحه اول) */
   #mobile-menu {
     transition: .3s ease-in-out;
   }
@@ -32,7 +32,7 @@
       </div>
     </div>
 
-    <!-- ✅ منوی دسکتاپ -->
+    <!-- ✅ Desktop Menu -->
     <nav class="hidden md:flex items-center gap-6 text-sm">
       <a href="index.html" class="text-gray-300 hover:text-sky-400 transition">خانه</a>
       <a href="index.html#services" class="text-gray-300 hover:text-sky-400 transition">خدمات</a>
@@ -43,15 +43,14 @@
       <a href="educational.html" class="text-gray-300 hover:text-sky-400 transition font-semibold">آموزشی</a>
     </nav>
 
-    <!-- ✅ دکمه منوی موبایل -->
+    <!-- ✅ Mobile Button -->
     <button class="md:hidden text-sky-400 text-3xl" onclick="openMenu()">
       <i class='bx bx-menu'></i>
     </button>
-
   </div>
 </header>
 
-<!-- ✅✅ منوی موبایل فول اسکرین دقیقا مثل صفحه اول -->
+<!-- ✅✅ Fullscreen Mobile Menu -->
 <div id="mobile-menu"
      class="fixed inset-0 bg-[#0c1724] z-[200] hidden flex-col pt-24 pb-10 px-6 overflow-y-auto">
 
@@ -60,7 +59,6 @@
   </button>
 
   <div class="flex flex-col gap-4 text-xl leading-loose">
-
     <a onclick="closeMenu()" href="index.html" class="flex items-center gap-2 py-3 border-b border-sky-400/20">
       <i class='bx bx-home text-2xl'></i> صفحه اصلی
     </a>
@@ -94,18 +92,67 @@
 <!-- Hero Section -->
 <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-gradient-to-b from-[#0d1c33] to-[#0a1424] pt-28">
   <h1 class="text-5xl font-extrabold text-sky-400 animate-fadeIn">NetRestart بخش آموزشی  </h1>
-  <p class="mt-4 max-w-2xl text-gray-300 animate-fadeIn delay-150">مطالب آموزشی جامع و کاربردی درباره امنیت شبکه، زیرساخت، فایروال و آگاهی سایبری...</p>
+  <p class="mt-4 max-w-2xl text-gray-300 animate-fadeIn delay-150">مطالب آموزشی جامع و کاربردی درباره امنیت شبکه، زیرساخت، فایروال و آگاهی سایبری. با مطالعه این مطالب، دانش فنی خود را افزایش دهید و در محیط سازمانی حرفه‌ای عمل کنید.</p>
 </section>
 
 <!-- Educational Content -->
 <section class="py-16 max-w-7xl mx-auto px-6 space-y-12">
-  ... ✅ (هیچ تغییری در محتوا نکردم)
+
+  <!-- امن‌سازی شبکه -->
+  <div class="bg-[#11223a] rounded-2xl p-8 shadow border border-sky-400/20 card transition-transform duration-300">
+    <h2 class="text-3xl font-bold text-sky-400 mb-4 section-title">امن‌سازی شبکه</h2>
+    <img src="/images/network-security.jpg" alt="امن‌سازی شبکه" class="w-full h-64 object-cover rounded mb-4">
+    <p class="text-gray-300 leading-relaxed mb-4">
+      امن‌سازی شبکه شامل اقدامات فنی و مدیریتی است تا داده‌ها و منابع سازمانی در برابر تهدیدات داخلی و خارجی محافظت شود.
+      رمزنگاری اطلاعات، مدیریت دسترسی‌ها، و پیکربندی امن سرورها و تجهیزات شبکه از جمله این اقدامات است.
+    </p>
+    <p class="text-gray-300 leading-relaxed">
+      امنیت شبکه یک فرآیند مستمر است و نیازمند پایش، بروزرسانی سیستم‌ها و آموزش کاربران می‌باشد. پیاده‌سازی سیاست‌های امنیتی قوی باعث جلوگیری از نفوذ و سوءاستفاده می‌شود.
+    </p>
+  </div>
+
+  <!-- معماری شبکه -->
+  <div class="bg-[#11223a] rounded-2xl p-8 shadow border border-sky-400/20 card transition-transform duration-300">
+    <h2 class="text-3xl font-bold text-sky-400 mb-4 section-title">معماری شبکه</h2>
+    <img src="/images/network-architecture.jpg" alt="معماری شبکه" class="w-full h-64 object-cover rounded mb-4">
+    <p class="text-gray-300 leading-relaxed mb-4">
+      معماری شبکه ساختار کلی شبکه سازمان را مشخص می‌کند. توپولوژی مناسب، تقسیم‌بندی VLAN و مدل لایه‌ای باعث بهبود عملکرد و امنیت می‌شوند.
+    </p>
+    <p class="text-gray-300 leading-relaxed">
+      طراحی اصولی شبکه باعث مدیریت آسان، مقیاس‌پذیری و پایداری بالا می‌شود و بهره‌وری را افزایش می‌دهد.
+    </p>
+  </div>
+
+  <!-- پیکربندی فایروال -->
+  <div class="bg-[#11223a] rounded-2xl p-8 shadow border border-sky-400/20 card transition-transform duration-300">
+    <h2 class="text-3xl font-bold text-sky-400 mb-4 section-title">پیکربندی فایروال</h2>
+    <img src="/images/firewall-config.jpg" alt="پیکربندی فایروال" class="w-full h-64 object-cover rounded mb-4">
+    <p class="text-gray-300 leading-relaxed mb-4">
+      فایروال اولین خط دفاعی شبکه است. پیکربندی دقیق آن شامل قوانین دسترسی، جلوگیری از ترافیک مشکوک و مانیتورینگ مداوم می‌باشد.
+    </p>
+    <p class="text-gray-300 leading-relaxed">
+      سیاست‌های امنیتی درست، نفوذ مهاجمین را کاهش می‌دهد و امنیت کلی شبکه را تضمین می‌کند. گزارش‌گیری و پایش مداوم تهدیدات را شناسایی می‌کند.
+    </p>
+  </div>
+
+  <!-- آگاهی سایبری -->
+  <div class="bg-[#11223a] rounded-2xl p-8 shadow border border-sky-400/20 card transition-transform duration-300">
+    <h2 class="text-3xl font-bold text-sky-400 mb-4 section-title">آگاهی سایبری</h2>
+    <img src="/images/cyber-awareness.jpg" alt="آگاهی سایبری" class="w-full h-64 object-cover rounded mb-4">
+    <p class="text-gray-300 leading-relaxed mb-4">
+      هیچ سیستمی بدون کاربران آگاه و آموزش دیده امن نیست. آموزش کارکنان درباره ایمیل‌های فیشینگ، استفاده صحیح از رمزها و رعایت سیاست‌های داخلی از مهم‌ترین اقدامات است.
+    </p>
+    <p class="text-gray-300 leading-relaxed">
+      فرهنگ امنیتی قوی از خطاهای انسانی جلوگیری کرده و باعث امنیت پایدار سازمان می‌شود. آموزش مداوم، کلید کاهش ریسک سایبری است.
+    </p>
+  </div>
+
 </section>
 
 <!-- Back to top -->
 <a href="#top" class="back-to-top"><i class='bx bx-up-arrow-circle'></i></a>
 
-<!-- ✅ اسکریپت باز و بستن منو -->
+<!-- ✅ Mobile Menu Script -->
 <script>
   function openMenu() {
     document.getElementById("mobile-menu").classList.remove("hidden");
