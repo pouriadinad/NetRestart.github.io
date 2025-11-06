@@ -227,9 +227,9 @@
   <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-6">
     <div class="card bg-[#11223a] p-6 rounded-2xl shadow border border-sky-400/20">
       <h3 class="text-xl text-sky-300 font-semibold mb-4">اطلاعات تماس</h3>
-      <p class="text-gray-400">آدرس: تهران،جردن شمالی،کوچه تابان شرقی،پلاک2</p>
-      <p class="text-gray-400">تلفن: 09013939128</p>
-      <p class="text-gray-400">تلفن: 09355591848</p>
+      <p class="text-gray-400 phone" data-number="09013939128">آدرس: تهران،جردن شمالی،کوچه تابان شرقی،پلاک2</p>
+      <p class="text-gray-400 phone" data-number="09013939128">تلفن: 09013939128</p>
+      <p class="text-gray-400 phone" data-number="09355591848">تلفن: 09355591848</p>
       <p class="text-gray-400">ایمیل: Net.Restart@gmail.com</p>
       <p class="text-gray-400 mt-2">ساعات پاسخگویی: 24 ساعت روز</p>
     </div>
@@ -252,6 +252,18 @@
 <script>
   function openMenu() { document.getElementById("mobile-menu").classList.remove("hidden"); }
   function closeMenu() { document.getElementById("mobile-menu").classList.add("hidden"); }
+
+  // قابلیت کپی و تماس روی شماره تلفن‌ها
+  document.querySelectorAll('.phone').forEach(el => {
+    el.style.cursor = 'pointer';
+    el.addEventListener('click', () => {
+      const number = el.dataset.number;
+      navigator.clipboard.writeText(number).then(() => {
+        alert('شماره کپی شد: ' + number);
+      });
+      window.location.href = 'tel:' + number;
+    });
+  });
 </script>
 
 </body>
