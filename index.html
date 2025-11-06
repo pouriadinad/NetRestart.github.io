@@ -6,16 +6,47 @@
 <title>NetRestart</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-
 <style>
-  body { background-color: #0c1724; color: #e5e7eb; font-family: Vazirmatn, sans-serif; scroll-behavior: smooth; }
+  body { 
+    background-color: #0c1724; 
+    color: #e5e7eb; 
+    font-family: Vazirmatn, sans-serif; 
+    scroll-behavior: smooth; 
+  }
   a:hover { color: #38bdf8; }
-  .back-to-top { position: fixed; bottom: 1.5rem; right: 1.5rem; font-size: 2.5rem; cursor: pointer; color: #38bdf8; }
+  .back-to-top { 
+    position: fixed; bottom: 1.5rem; right: 1.5rem; 
+    font-size: 2.5rem; cursor: pointer; color: #38bdf8; 
+  }
   .card:hover { transform: translateY(-6px); transition: 0.3s ease-in-out; }
   .section-title { color: #38bdf8; font-size: 2rem; font-weight: 700; margin-bottom: 2rem; text-align: center; }
+  #mobile-menu { transition: .3s ease-in-out; }
 
-  #mobile-menu {
-    transition: .3s ease-in-out;
+  /* هدر با بک‌گراند و overlay */
+  .bg-header {
+    background-image: url('images/network-2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+
+  .bg-overlay {
+    background: linear-gradient(to bottom, rgba(13,28,51,0.7), rgba(10,20,36,0.8));
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* تصویر پشت متن کوتاه هدر */
+  .text-bg {
+    position: absolute;
+    inset: 0;
+    background: img src="images/11.jpg" center/cover no-repeat;
+    opacity: 0.2;
+    border-radius: 0.25rem;
   }
 </style>
 </head>
@@ -23,15 +54,17 @@
 
 <header class="fixed w-full z-50 backdrop-blur bg-[#0c1724]/90 shadow-md border-b border-sky-400/40">
   <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
-    <div class="flex items-center gap-4">
-      <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-sky-400 to-cyan-300 flex items-center justify-center text-white font-bold">NR</div>
-      <div>
+    <div class="flex items-center gap-4 relative">
+      <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-sky-400 to-cyan-300 flex items-center justify-center text-white font-bold z-10">NR</div>
+      <div class="relative z-10">
         <div class="text-lg font-bold text-white">NetRestart</div>
-        <div class="text-xs text-slate-300">راهکارهای شبکه، امنیت و ارتباطات</div>
+        <div class="text-xs text-slate-300 relative">
+          <span class="text-bg"></span>
+          <span class="relative px-1">راهکارهای شبکه، امنیت و ارتباطات</span>
+        </div>
       </div>
     </div>
 
-    <!-- ✅ منوی دسکتاپ -->
     <nav class="hidden md:flex items-center gap-6 text-sm">
       <a href="#services" class="hover:text-sky-400 transition">خدمات</a>
       <a href="#portfolio" class="hover:text-sky-400 transition">پروژه‌ها</a>
@@ -41,7 +74,6 @@
       <a href="educational.html" class="hover:text-sky-400 transition">آموزشی</a>
     </nav>
 
-    <!-- ✅ دکمه منوی موبایل -->
     <button class="md:hidden text-sky-400 text-3xl" onclick="openMenu()">
       <i class='bx bx-menu'></i>
     </button>
@@ -49,54 +81,42 @@
   </div>
 </header>
 
-<!-- ✅✅ منوی موبایل -->
 <div id="mobile-menu"
      class="fixed inset-0 bg-[#0c1724] z-[200] hidden flex-col pt-24 pb-10 px-6 overflow-y-auto">
-
   <button class="absolute top-5 right-5 text-3xl text-sky-400" onclick="closeMenu()">
     <i class='bx bx-x'></i>
   </button>
-
   <div class="flex flex-col gap-4 text-xl leading-loose">
-
     <a onclick="closeMenu()" href="#top" class="flex items-center gap-2 py-3 border-b border-sky-400/20">
       <i class='bx bx-home text-2xl'></i> صفحه اصلی
     </a>
-
     <a onclick="closeMenu()" href="#services" class="flex items-center gap-2 py-3 border-b border-sky-400/20">
       <i class='bx bx-cog text-2xl'></i> خدمات ما
     </a>
-
     <a onclick="closeMenu()" href="#portfolio" class="flex items-center gap-2 py-3 border-b border-sky-400/20">
       <i class='bx bx-layer text-2xl'></i> پروژه‌ها
     </a>
-
     <a onclick="closeMenu()" href="#team" class="flex items-center gap-2 py-3 border-b border-sky-400/20">
       <i class='bx bx-group text-2xl'></i> تیم ما
     </a>
-
     <a onclick="closeMenu()" href="#faq" class="flex items-center gap-2 py-3 border-b border-sky-400/20">
       <i class='bx bx-help-circle text-2xl'></i> سوالات متداول
     </a>
-
     <a onclick="closeMenu()" href="educational.html" class="flex items-center gap-2 py-3 border-b border-sky-400/20">
       <i class='bx bx-book text-2xl'></i> بخش آموزشی
     </a>
-
     <a onclick="closeMenu()" href="#contact" class="flex items-center gap-2 py-3">
       <i class='bx bx-phone text-2xl'></i> تماس با ما
     </a>
   </div>
 </div>
 
-<!-- ✅✅ سکشن با عکس پس‌زمینه ✅✅ -->
-<section
-  class="min-h-screen flex flex-col justify-center items-center text-center px-4
-  bg-[network-1] bg-cover bg-center bg-no-repeat
-  bg-gradient-to-b from-[#0d1c33]/70 to-[#0a1424]/80 bg-blend-overlay
-  pt-24">
-  <h1 class="text-5xl font-extrabold text-sky-400">NetRestart</h1>
-  <p class="mt-4 max-w-2xl text-gray-300">ارائه دهندهٔ راه‌حل‌های زیرساختی، امنیتی و ارتباطی برای سازمان‌ها — طراحی، اجرا و پشتیبانی با استانداردهای جهانی.</p>
+<section class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 pt-24 bg-header">
+  <div class="bg-overlay"></div>
+  <h1 class="text-5xl font-extrabold text-sky-400 z-10 relative">NetRestart</h1>
+  <p class="mt-4 max-w-2xl mx-auto text-gray-300 z-10 relative">
+    ارائه دهندهٔ راه‌حل‌های زیرساختی، امنیتی و ارتباطی برای سازمان‌ها — طراحی، اجرا و پشتیبانی با استانداردهای جهانی.
+  </p>
 </section>
 
 <section id="services" class="py-16 bg-[#0f1c2d]">
@@ -133,19 +153,19 @@
   <h2 class="section-title">پروژه‌ها</h2>
   <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6">
     <div class="card bg-[#11223a] rounded-2xl overflow-hidden shadow border border-sky-400/20">
-      <img src="/images/portfolio1.jpg" alt="پیاده‌سازی شبکه شرکتی" class="w-full h-64 object-cover">
+      <img src="images/cable.jpeg" alt="پیاده‌سازی شبکه شرکتی" class="w-full h-64 object-cover">
       <div class="p-4">
         <h3 class="text-xl text-sky-300 font-semibold">پیاده‌سازی شبکه شرکتی</h3>
       </div>
     </div>
     <div class="card bg-[#11223a] rounded-2xl overflow-hidden shadow border border-sky-400/20">
-      <img src="/images/portfolio2.jpg" alt="راه‌اندازی مرکز داده" class="w-full h-64 object-cover">
+      <img src="images/pardis.jpg" alt="راه‌اندازی مرکز داده" class="w-full h-64 object-cover">
       <div class="p-4">
         <h3 class="text-xl text-sky-300 font-semibold">راه‌اندازی مرکز داده</h3>
       </div>
     </div>
     <div class="card bg-[#11223a] rounded-2xl overflow-hidden shadow border border-sky-400/20">
-      <img src="/images/portfolio3.jpg" alt="پیکربندی VoIP" class="w-full h-64 object-cover">
+      <img src="images/voip1.jpg" alt="پیکربندی VoIP" class="w-full h-64 object-cover">
       <div class="p-4">
         <h3 class="text-xl text-sky-300 font-semibold">پیکربندی VoIP</h3>
       </div>
@@ -157,19 +177,19 @@
   <h2 class="section-title">تیم ما</h2>
   <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6">
     <div class="card bg-[#11223a] p-6 rounded-2xl shadow border border-sky-400/20 text-center">
-      <img src="/images/team1.jpg" alt="مهندس رستگار" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
-      <h3 class="text-xl text-sky-300 font-semibold">مهندس رستگار</h3>
-      <p class="text-gray-400">مدیر شبکه و امنیت</p>
+      <img src="images/team1.png" alt="" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+      <h3 class="text-xl text-sky-300 font-semibold">مهندس حسین نوری</h3>
+      <p class="text-gray-400">متخصص شبکه و امنیت</p>
     </div>
     <div class="card bg-[#11223a] p-6 rounded-2xl shadow border border-sky-400/20 text-center">
-      <img src="/images/team2.jpg" alt="مهندس صالحی" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
-      <h3 class="text-xl text-sky-300 font-semibold">مهندس صالحی</h3>
-      <p class="text-gray-400">کارشناس زیرساخت</p>
+      <img src="images/team2.png" alt="" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+      <h3 class="text-xl text-sky-300 font-semibold">مهندس پگاه چراغی </h3>
+      <p class="text-gray-400">متخصص زیرساخت</p>
     </div>
     <div class="card bg-[#11223a] p-6 rounded-2xl shadow border border-sky-400/20 text-center">
-      <img src="/images/team3.jpg" alt="مهندس رضایی" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
-      <h3 class="text-xl text-sky-300 font-semibold">مهندس رضایی</h3>
-      <p class="text-gray-400">کارشناس فایروال</p>
+      <img src="images/team3.png" alt="" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+      <h3 class="text-xl text-sky-300 font-semibold">مهندس پوریا دیناد</h3>
+      <p class="text-gray-400">متخصص فایروال</p>
     </div>
   </div>
 </section>
@@ -195,7 +215,7 @@
       <p class="text-gray-400 leading-relaxed">“NetRestart با دقت و سرعت پروژه شبکه ما را اجرا و پشتیبانی کرد.”</p>
       <h3 class="text-xl text-sky-300 font-semibold mt-3">شرکت فناوری آریا</h3>
     </div>
-    <div class="card bg-[#11223ا] p-6 rounded-2xl shadow border border-sky-400/20">
+    <div class="card bg-[#11223a] p-6 rounded-2xl shadow border border-sky-400/20">
       <p class="text-gray-400 leading-relaxed">“پشتیبانی حرفه‌ای و پاسخگویی سریع؛ تجربه‌ای مطمئن.”</p>
       <h3 class="text-xl text-sky-300 font-semibold mt-3">سازمان توسعه نوین</h3>
     </div>
@@ -207,12 +227,12 @@
   <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-6">
     <div class="card bg-[#11223a] p-6 rounded-2xl shadow border border-sky-400/20">
       <h3 class="text-xl text-sky-300 font-semibold mb-4">اطلاعات تماس</h3>
-      <p class="text-gray-400">آدرس: تهران - شهرک صنعتی</p>
-      <p class="text-gray-400">تلفن: +98 21 1234 5678</p>
-      <p class="text-gray-400">ایمیل: info@shabakeparsan.ir</p>
-      <p class="text-gray-400 mt-2">ساعات پاسخگویی: شنبه تا چهارشنبه 9 صبح تا 5 بعدازظهر</p>
+      <p class="text-gray-400">آدرس: تهران،جردن شمالی،کوچه تابان شرقی،پلاک2</p>
+      <p class="text-gray-400">تلفن: 09013939128</p>
+      <p class="text-gray-400">تلفن: 09355591848</p>
+      <p class="text-gray-400">ایمیل: Net.Restart@gmail,com</p>
+      <p class="text-gray-400 mt-2">ساعات پاسخگویی: 24 ساعت روز</p>
     </div>
-
     <div class="card bg-[#11223a] p-6 rounded-2xl shadow border border-sky-400/20">
       <h3 class="text-xl text-sky-300 font-semibold mb-4">فرم تماس</h3>
       <form class="space-y-4">
@@ -230,12 +250,8 @@
 <a href="#top" class="back-to-top"><i class='bx bxs-up-arrow'></i></a>
 
 <script>
-  function openMenu() {
-    document.getElementById("mobile-menu").classList.remove("hidden");
-  }
-  function closeMenu() {
-    document.getElementById("mobile-menu").classList.add("hidden");
-  }
+  function openMenu() { document.getElementById("mobile-menu").classList.remove("hidden"); }
+  function closeMenu() { document.getElementById("mobile-menu").classList.add("hidden"); }
 </script>
 
 </body>
