@@ -12,6 +12,15 @@
   .back-to-top { position: fixed; bottom: 1.5rem; right: 1.5rem; font-size: 2.5rem; cursor: pointer; color: #38bdf8; }
   .card:hover { transform: translateY(-6px); transition: 0.3s ease-in-out; }
   .section-title { color: #38bdf8; font-size: 2rem; font-weight: 700; margin-bottom: 2rem; text-align: center; }
+
+  /* ✅ فقط برای اصلاح منوی موبایل اضافه شد */
+  #mobile-menu {
+    position: fixed;
+    top: 64px;
+    right: 0;
+    left: 0;
+    z-index: 50;
+  }
 </style>
 </head>
 <body id="top">
@@ -53,7 +62,6 @@
   <a href="#contact" class="block text-gray-300 hover:text-sky-400">تماس با ما</a>
   <a href="educational.html" class="block text-gray-300 hover:text-sky-400">آموزشی</a>
 </div>
-
 
 <!-- Hero -->
 <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-gradient-to-b from-[#0d1c33] to-[#0a1424] pt-24">
@@ -177,7 +185,7 @@
       <h3 class="text-xl text-sky-300 font-semibold mb-4">اطلاعات تماس</h3>
       <p class="text-gray-400">آدرس: تهران - شهرک صنعتی</p>
       <p class="text-gray-400">تلفن: +98 21 1234 5678</p>
-      <p class="text-gray-400">ایمیل: info@shabakeparsan.ir</p>
+      <p class="text-gray-400">ایمیل: info@shabakeparsam.ir</p>
       <p class="text-gray-400 mt-2">ساعات پاسخگویی: شنبه تا چهارشنبه 9 صبح تا 5 بعدازظهر</p>
     </div>
     <div class="card bg-[#11223a] p-6 rounded-2xl shadow border border-sky-400/20">
@@ -185,7 +193,7 @@
       <form class="space-y-4">
         <input type="text" placeholder="نام و نام خانوادگی" class="w-full p-3 rounded bg-[#0f1c2d] border border-sky-400/20 text-gray-300" />
         <input type="text" placeholder="ایمیل یا تلفن" class="w-full p-3 rounded bg-[#0f1c2d] border border-sky-400/20 text-gray-300" />
-        <textarea rows="4" placeholder="پیام شما" class="w-full p-3 rounded	bg-[#0f1c2d] border border-sky-400/20 text-gray-300"></textarea>
+        <textarea rows="4" placeholder="پیام شما" class="w-full p-3 rounded bg-[#0f1c2d] border border-sky-400/20 text-gray-300"></textarea>
         <div class="text-right">
           <button type="submit" class="bg-sky-400 text-[#0c1724] px-6 py-2 rounded font-semibold hover:bg-sky-300 transition">ارسال پیام</button>
         </div>
