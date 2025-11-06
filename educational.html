@@ -10,12 +10,14 @@
   body { background-color: #0c1724; color: #e5e7eb; font-family: 'Vazirmatn', sans-serif; }
   a:hover { color: #38bdf8; }
   .back-to-top { position: fixed; bottom: 1.5rem; right: 1.5rem; font-size: 2.5rem; cursor: pointer; color: #38bdf8; }
-  .card:hover { transform: translateY(-8px); box-shadow: 0 15px 25px rgba(0,0,0,0.5); }
-  .section-title { border-left: 4px solid #38bdf8; padding-left: 0.75rem; }
-  
+  .card:hover { transform: translateY(-10px); box-shadow: 0 25px 45px rgba(0,0,0,0.7); }
+  .section-title { border-left: 4px solid #38bdf8; padding-left: 0.75rem; font-weight: 700; font-size: 1.9rem; }
+  .card img { transition: transform 0.5s ease, filter 0.5s ease; border-radius: 0.75rem; }
+  .card img:hover { transform: scale(1.08); filter: brightness(1.1); }
+
   /* Hero Section آموزشی با بک‌گراند تصویر */
   .bg-header-edu {
-    background-image: url('images/network-1.png'); /* تصویر دلخواه خودتان */
+    background-image: url('images/network-1.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -49,64 +51,90 @@
 
 <!-- Hero Section -->
 <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 pt-28 bg-header-edu">
-  <!-- Overlay -->
   <div class="absolute inset-0 bg-gradient-to-b from-[#0d1c33]/70 to-[#0a1424]/80"></div>
   
   <h1 class="text-5xl font-extrabold text-sky-400 z-10 relative">NetRestart بخش آموزشی</h1>
-  <p class="mt-4 max-w-2xl text-gray-300 z-10 relative">
-    مطالب آموزشی جامع و کاربردی درباره امنیت شبکه، زیرساخت، فایروال و آگاهی سایبری. با مطالعه این مطالب، دانش فنی خود را افزایش دهید و در محیط سازمانی حرفه‌ای عمل کنید.
+  <p class="mt-6 max-w-2xl text-gray-300 z-10 relative text-lg leading-relaxed">
+    در این بخش آموزشی، مجموعه‌ای جامع و عملیاتی از مطالب و راهنمایی‌های دقیق درباره امنیت شبکه، زیرساخت، فایروال و آگاهی سایبری ارائه شده است.
+    هدف ما ارتقای سطح دانش فنی کاربران و آماده‌سازی حرفه‌ای افراد برای محیط‌های کاری واقعی و پیچیده می‌باشد.
+    با مطالعه این مطالب، شما می‌توانید استراتژی‌های پیشرفته امنیت شبکه را در سازمان خود پیاده‌سازی کنید و مشکلات عملی را حل نمایید.
   </p>
 </section>
 
 <!-- Educational Content -->
-<section class="py-16 max-w-7xl mx-auto px-6 space-y-12">
+<section class="py-16 max-w-7xl mx-auto px-6 space-y-20">
 
   <!-- امن‌سازی شبکه -->
-  <div class="bg-[#11223a] rounded-2xl p-8 shadow border border-sky-400/20 card transition-transform duration-300">
-    <h2 class="text-3xl font-bold text-sky-400 mb-4 section-title">امن‌سازی شبکه</h2>
-    <img src="images/111.jpg" alt="امن‌سازی شبکه" class="w-full h-64 object-cover rounded mb-4">
-    <p class="text-gray-300 leading-relaxed mb-4">
-      امن‌سازی شبکه شامل اقدامات فنی و مدیریتی است تا داده‌ها و منابع سازمانی در برابر تهدیدات داخلی و خارجی محافظت شود.
-      رمزنگاری اطلاعات، مدیریت دسترسی‌ها، و پیکربندی امن سرورها و تجهیزات شبکه از جمله این اقدامات است.
+  <div class="bg-[#11223a] rounded-2xl p-10 shadow border border-sky-400/20 card transition-transform duration-300">
+    <h2 class="text-3xl font-bold text-sky-400 mb-6 section-title">امن‌سازی شبکه</h2>
+    <img src="images/111.jpg" alt="امن‌سازی شبکه" class="w-full h-[500px] object-cover mb-6 shadow-lg rounded-xl">
+    <p class="text-gray-300 leading-relaxed mb-4 text-justify">
+      امن‌سازی شبکه شامل مجموعه‌ای از اقدامات فنی، مدیریتی و پروتکلی است که با هدف محافظت از داده‌ها، سیستم‌ها و منابع حیاتی سازمان انجام می‌شود. 
+      این اقدامات شامل طراحی سیاست‌های امنیتی، استفاده از رمزنگاری قدرتمند، مدیریت دسترسی‌ها، و پیاده‌سازی سیاست‌های امنیتی برای سرورها و تجهیزات شبکه است.
     </p>
-    <p class="text-gray-300 leading-relaxed">
-      امنیت شبکه یک فرآیند مستمر است و نیازمند پایش، بروزرسانی سیستم‌ها و آموزش کاربران می‌باشد. پیاده‌سازی سیاست‌های امنیتی قوی باعث جلوگیری از نفوذ و سوءاستفاده می‌شود.
+    <p class="text-gray-300 leading-relaxed mb-4 text-justify">
+      علاوه بر امنیت فنی، آموزش کاربران و ایجاد فرهنگ امنیتی، بخشی حیاتی از امن‌سازی شبکه است. کاربران آموزش‌دیده قادر خواهند بود حملات فیشینگ، بدافزارها و تهدیدات دیگر را شناسایی و به موقع گزارش کنند.
+    </p>
+    <p class="text-gray-300 leading-relaxed mb-4 text-justify">
+      ابزارهایی مانند فایروال، سیستم‌های IDS/IPS، مدیریت تهدیدات و پایش مداوم شبکه، ستون‌های اصلی امنیت شبکه هستند. پیاده‌سازی درست این ابزارها، سازمان را در برابر حملات سایبری مقاوم می‌کند و امکان واکنش سریع به رخدادها را فراهم می‌نماید.
+    </p>
+    <p class="text-gray-300 leading-relaxed text-justify">
+      امن‌سازی شبکه یک فرآیند مستمر و پویا است؛ به‌روزرسانی سیستم‌ها، بازبینی سیاست‌ها و آموزش منظم کاربران برای مقابله با تهدیدات جدید ضروری است.
     </p>
   </div>
 
   <!-- معماری شبکه -->
-  <div class="bg-[#11223a] rounded-2xl p-8 shadow border border-sky-400/20 card transition-transform duration-300">
-    <h2 class="text-3xl font-bold text-sky-400 mb-4 section-title">معماری شبکه</h2>
-    <img src="images/network3.JPG" alt="معماری شبکه" class="w-full h-64 object-cover rounded mb-4">
-    <p class="text-gray-300 leading-relaxed mb-4">
-      معماری شبکه ساختار کلی شبکه سازمان را مشخص می‌کند. توپولوژی مناسب، تقسیم‌بندی VLAN و مدل لایه‌ای باعث بهبود عملکرد و امنیت می‌شوند.
+  <div class="bg-[#11223a] rounded-2xl p-10 shadow border border-sky-400/20 card transition-transform duration-300">
+    <h2 class="text-3xl font-bold text-sky-400 mb-6 section-title">معماری شبکه</h2>
+    <img src="images/network3.JPG" alt="معماری شبکه" class="w-full h-[500px] object-cover mb-6 shadow-lg rounded-xl">
+    <p class="text-gray-300 leading-relaxed mb-4 text-justify">
+      معماری شبکه، طراحی و ساختار کلی شبکه سازمان را مشخص می‌کند و شامل توپولوژی، تقسیم‌بندی VLAN، طراحی مدل‌های لایه‌ای و انتخاب تجهیزات استاندارد است. 
+      این طراحی باعث افزایش کارایی، امنیت و مقیاس‌پذیری شبکه می‌شود.
     </p>
-    <p class="text-gray-300 leading-relaxed">
-      طراحی اصولی شبکه باعث مدیریت آسان، مقیاس‌پذیری و پایداری بالا می‌شود و بهره‌وری را افزایش می‌دهد.
+    <p class="text-gray-300 leading-relaxed mb-4 text-justify">
+      انتخاب پروتکل‌ها، نقاط دسترسی و مسیرهای ارتباطی، به همراه مدیریت پهنای باند و برنامه‌ریزی ظرفیت، از نکات کلیدی معماری شبکه هستند که به عملکرد بهینه شبکه کمک می‌کنند.
+    </p>
+    <p class="text-gray-300 leading-relaxed mb-4 text-justify">
+      معماری شبکه بهینه باعث کاهش هزینه‌های نگهداری و مدیریت آسان‌تر شبکه می‌شود و به سازمان اجازه می‌دهد تغییرات و توسعه‌های آینده را بدون اختلال انجام دهد.
+    </p>
+    <p class="text-gray-300 leading-relaxed text-justify">
+      مستندسازی دقیق، نظارت بر عملکرد و بازبینی منظم معماری، ابزارهای مهم برای پایداری و امنیت بلندمدت شبکه هستند.
     </p>
   </div>
 
   <!-- پیکربندی فایروال -->
-  <div class="bg-[#11223a] rounded-2xl p-8 shadow border border-sky-400/20 card transition-transform duration-300">
-    <h2 class="text-3xl font-bold text-sky-400 mb-4 section-title">پیکربندی فایروال</h2>
-    <img src="images/what-is-a-firewall.png" alt="پیکربندی فایروال" class="w-full h-64 object-cover rounded mb-4">
-    <p class="text-gray-300 leading-relaxed mb-4">
-      فایروال اولین خط دفاعی شبکه است. پیکربندی دقیق آن شامل قوانین دسترسی، جلوگیری از ترافیک مشکوک و مانیتورینگ مداوم می‌باشد.
+  <div class="bg-[#11223a] rounded-2xl p-10 shadow border border-sky-400/20 card transition-transform duration-300">
+    <h2 class="text-3xl font-bold text-sky-400 mb-6 section-title">پیکربندی فایروال</h2>
+    <img src="images/what-is-a-firewall.png" alt="پیکربندی فایروال" class="w-full h-[500px] object-cover mb-6 shadow-lg rounded-xl">
+    <p class="text-gray-300 leading-relaxed mb-4 text-justify">
+      فایروال اولین خط دفاعی در شبکه است و پیکربندی صحیح آن می‌تواند امنیت سازمان را به‌طور چشمگیری افزایش دهد. قوانین دسترسی دقیق، فیلتر کردن ترافیک مشکوک و ایجاد سیاست‌های امنیتی قوی، بخش مهم این فرآیند است.
     </p>
-    <p class="text-gray-300 leading-relaxed">
-      سیاست‌های امنیتی درست، نفوذ مهاجمین را کاهش می‌دهد و امنیت کلی شبکه را تضمین می‌کند. گزارش‌گیری و پایش مداوم تهدیدات را شناسایی می‌کند.
+    <p class="text-gray-300 leading-relaxed mb-4 text-justify">
+      فایروال باید به‌طور مداوم مانیتور شود و قوانین آن بر اساس تحلیل تهدیدات بروزرسانی شود. بررسی گزارش‌ها و شناسایی رفتارهای غیرعادی، کمک می‌کند حملات را قبل از آسیب جدی متوقف کنیم.
+    </p>
+    <p class="text-gray-300 leading-relaxed mb-4 text-justify">
+      ترکیب فایروال با سیستم‌های IDS/IPS، VPN و راهکارهای امنیتی پیشرفته، یک شبکه امن و مقاوم در برابر حملات سایبری ایجاد می‌کند.
+    </p>
+    <p class="text-gray-300 leading-relaxed text-justify">
+      آموزش کارکنان در استفاده درست از منابع و پایش مداوم فایروال، امنیت شبکه را به سطح حرفه‌ای و قابل اعتماد می‌رساند.
     </p>
   </div>
 
   <!-- آگاهی سایبری -->
-  <div class="bg-[#11223a] rounded-2xl p-8 shadow border border-sky-400/20 card transition-transform duration-300">
-    <h2 class="text-3xl font-bold text-sky-400 mb-4 section-title">آگاهی سایبری</h2>
-    <img src="images/siberi.JPG" alt="آگاهی سایبری" class="w-full h-64 object-cover rounded mb-4">
-    <p class="text-gray-300 leading-relaxed mb-4">
-      هیچ سیستمی بدون کاربران آگاه و آموزش دیده امن نیست. آموزش کارکنان درباره ایمیل‌های فیشینگ، استفاده صحیح از رمزها و رعایت سیاست‌های داخلی از مهم‌ترین اقدامات است.
+  <div class="bg-[#11223a] rounded-2xl p-10 shadow border border-sky-400/20 card transition-transform duration-300">
+    <h2 class="text-3xl font-bold text-sky-400 mb-6 section-title">آگاهی سایبری</h2>
+    <img src="images/siberi.JPG" alt="آگاهی سایبری" class="w-full h-[500px] object-cover mb-6 shadow-lg rounded-xl">
+    <p class="text-gray-300 leading-relaxed mb-4 text-justify">
+      آموزش و آگاهی سایبری، ستون اصلی امنیت شبکه است. بدون کاربران آموزش دیده و آگاه، تمامی ابزارهای فنی به تنهایی کافی نیستند. کارکنان باید توانایی شناسایی ایمیل‌های فیشینگ، حملات اجتماعی و تهدیدات ناشناخته را داشته باشند.
     </p>
-    <p class="text-gray-300 leading-relaxed">
-      فرهنگ امنیتی قوی از خطاهای انسانی جلوگیری کرده و باعث امنیت پایدار سازمان می‌شود. آموزش مداوم، کلید کاهش ریسک سایبری است.
+    <p class="text-gray-300 leading-relaxed mb-4 text-justify">
+      ایجاد فرهنگ امنیتی در سازمان، به کارکنان یاد می‌دهد چگونه از داده‌ها و اطلاعات حساس محافظت کنند و تصمیمات آگاهانه بگیرند. این فرآیند باعث کاهش خطاهای انسانی و جلوگیری از نفوذ مهاجمین می‌شود.
+    </p>
+    <p class="text-gray-300 leading-relaxed mb-4 text-justify">
+      آموزش مداوم، تمرین‌های شبیه‌سازی حمله، بررسی سناریوهای مختلف و ارزیابی ریسک، سازمان را برای مقابله با تهدیدات سایبری آماده می‌سازد.
+    </p>
+    <p class="text-gray-300 leading-relaxed text-justify">
+      کارکنان آموزش دیده نقش فعال در امنیت دارند و با پایش، گزارش‌دهی و رعایت سیاست‌های داخلی، امنیت پایدار و مستمری برای سازمان فراهم می‌کنند.
     </p>
   </div>
 
