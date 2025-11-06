@@ -12,10 +12,14 @@
   .back-to-top { position: fixed; bottom: 1.5rem; right: 1.5rem; font-size: 2.5rem; cursor: pointer; color: #38bdf8; }
   .card:hover { transform: translateY(-8px); box-shadow: 0 15px 25px rgba(0,0,0,0.5); }
   .section-title { border-left: 4px solid #38bdf8; padding-left: 0.75rem; }
-
-  /* ✅ Mobile Menu Style (مثل صفحه اول) */
-  #mobile-menu {
-    transition: .3s ease-in-out;
+  
+  /* Hero Section آموزشی با بک‌گراند تصویر */
+  .bg-header-edu {
+    background-image: url('images/network-1.png'); /* تصویر دلخواه خودتان */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
   }
 </style>
 </head>
@@ -31,8 +35,6 @@
         <div class="text-xs text-slate-300">راهکارهای شبکه، امنیت و ارتباطات</div>
       </div>
     </div>
-
-    <!-- ✅ Desktop Menu -->
     <nav class="hidden md:flex items-center gap-6 text-sm">
       <a href="index.html" class="text-gray-300 hover:text-sky-400 transition">خانه</a>
       <a href="index.html#services" class="text-gray-300 hover:text-sky-400 transition">خدمات</a>
@@ -42,57 +44,18 @@
       <a href="index.html#contact" class="text-gray-300 hover:text-sky-400 transition">تماس با ما</a>
       <a href="educational.html" class="text-gray-300 hover:text-sky-400 transition font-semibold">آموزشی</a>
     </nav>
-
-    <!-- ✅ Mobile Button -->
-    <button class="md:hidden text-sky-400 text-3xl" onclick="openMenu()">
-      <i class='bx bx-menu'></i>
-    </button>
   </div>
 </header>
 
-<!-- ✅✅ Fullscreen Mobile Menu -->
-<div id="mobile-menu"
-     class="fixed inset-0 bg-[#0c1724] z-[200] hidden flex-col pt-24 pb-10 px-6 overflow-y-auto">
-
-  <button class="absolute top-5 right-5 text-3xl text-sky-400" onclick="closeMenu()">
-    <i class='bx bx-x'></i>
-  </button>
-
-  <div class="flex flex-col gap-4 text-xl leading-loose">
-    <a onclick="closeMenu()" href="index.html" class="flex items-center gap-2 py-3 border-b border-sky-400/20">
-      <i class='bx bx-home text-2xl'></i> صفحه اصلی
-    </a>
-
-    <a onclick="closeMenu()" href="index.html#services" class="flex items-center gap-2 py-3 border-b border-sky-400/20">
-      <i class='bx bx-cog text-2xl'></i> خدمات ما
-    </a>
-
-    <a onclick="closeMenu()" href="index.html#portfolio" class="flex items-center gap-2 py-3 border-b border-sky-400/20">
-      <i class='bx bx-layer text-2xl'></i> پروژه‌ها
-    </a>
-
-    <a onclick="closeMenu()" href="index.html#team" class="flex items-center gap-2 py-3 border-b border-sky-400/20">
-      <i class='bx bx-group text-2xl'></i> تیم ما
-    </a>
-
-    <a onclick="closeMenu()" href="index.html#faq" class="flex items-center gap-2 py-3 border-b border-sky-400/20">
-      <i class='bx bx-help-circle text-2xl'></i> سوالات متداول
-    </a>
-
-    <a onclick="closeMenu()" href="educational.html" class="flex items-center gap-2 py-3 border-b border-sky-400/20">
-      <i class='bx bx-book text-2xl'></i> بخش آموزشی
-    </a>
-
-    <a onclick="closeMenu()" href="index.html#contact" class="flex items-center gap-2 py-3">
-      <i class='bx bx-phone text-2xl'></i> تماس با ما
-    </a>
-  </div>
-</div>
-
 <!-- Hero Section -->
-<section class="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-gradient-to-b from-[#0d1c33] to-[#0a1424] pt-28">
-  <h1 class="text-5xl font-extrabold text-sky-400 animate-fadeIn">NetRestart بخش آموزشی  </h1>
-  <p class="mt-4 max-w-2xl text-gray-300 animate-fadeIn delay-150">مطالب آموزشی جامع و کاربردی درباره امنیت شبکه، زیرساخت، فایروال و آگاهی سایبری. با مطالعه این مطالب، دانش فنی خود را افزایش دهید و در محیط سازمانی حرفه‌ای عمل کنید.</p>
+<section class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 pt-28 bg-header-edu">
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-[#0d1c33]/70 to-[#0a1424]/80"></div>
+  
+  <h1 class="text-5xl font-extrabold text-sky-400 z-10 relative">NetRestart بخش آموزشی</h1>
+  <p class="mt-4 max-w-2xl text-gray-300 z-10 relative">
+    مطالب آموزشی جامع و کاربردی درباره امنیت شبکه، زیرساخت، فایروال و آگاهی سایبری. با مطالعه این مطالب، دانش فنی خود را افزایش دهید و در محیط سازمانی حرفه‌ای عمل کنید.
+  </p>
 </section>
 
 <!-- Educational Content -->
@@ -101,7 +64,7 @@
   <!-- امن‌سازی شبکه -->
   <div class="bg-[#11223a] rounded-2xl p-8 shadow border border-sky-400/20 card transition-transform duration-300">
     <h2 class="text-3xl font-bold text-sky-400 mb-4 section-title">امن‌سازی شبکه</h2>
-    <img src="/images/network-security.jpg" alt="امن‌سازی شبکه" class="w-full h-64 object-cover rounded mb-4">
+    <img src="/images/111.jpg" alt="امن‌سازی شبکه" class="w-full h-64 object-cover rounded mb-4">
     <p class="text-gray-300 leading-relaxed mb-4">
       امن‌سازی شبکه شامل اقدامات فنی و مدیریتی است تا داده‌ها و منابع سازمانی در برابر تهدیدات داخلی و خارجی محافظت شود.
       رمزنگاری اطلاعات، مدیریت دسترسی‌ها، و پیکربندی امن سرورها و تجهیزات شبکه از جمله این اقدامات است.
@@ -151,16 +114,6 @@
 
 <!-- Back to top -->
 <a href="#top" class="back-to-top"><i class='bx bx-up-arrow-circle'></i></a>
-
-<!-- ✅ Mobile Menu Script -->
-<script>
-  function openMenu() {
-    document.getElementById("mobile-menu").classList.remove("hidden");
-  }
-  function closeMenu() {
-    document.getElementById("mobile-menu").classList.add("hidden");
-  }
-</script>
 
 </body>
 </html>
