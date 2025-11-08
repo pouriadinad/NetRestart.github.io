@@ -3,9 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NetRestart</title>
+<title>NetRestart | راهکارهای شبکه، امنیت و ارتباطات</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="NetRestart ارائه دهنده راهکارهای شبکه، امنیت و ارتباطات. نصب و پشتیبانی سانترال و VoIP، طراحی و پیاده‌سازی شبکه، کانفیگ سوییچ و فایروال، آموزش و پشتیبانی 24/7">
+<meta name="keywords" content="شبکه، امنیت، ارتباطات، سانترال، VoIP، سوییچ، فایروال، آموزش IT، زیرساخت، مانیتورینگ، پشتیبانی، دیتاسنتر، پروژه شبکه">
+<meta name="author" content="NetRestart">
+<meta name="robots" content="index, follow">
+<meta name="language" content="FA">
+
+<!-- Open Graph / Social Media -->
+<meta property="og:title" content="NetRestart | راهکارهای شبکه، امنیت و ارتباطات">
+<meta property="og:description" content="NetRestart ارائه دهنده راهکارهای شبکه، امنیت و ارتباطات برای سازمان‌ها — طراحی، اجرا و پشتیبانی با استانداردهای جهانی.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.netrestart.ir/">
+<meta property="og:image" content="https://www.netrestart.ir/images/network-2.png">
+<meta property="og:locale" content="fa_IR">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NetRestart | راهکارهای شبکه، امنیت و ارتباطات">
+<meta name="twitter:description" content="NetRestart ارائه دهنده راهکارهای شبکه، امنیت و ارتباطات برای سازمان‌ها — طراحی، اجرا و پشتیبانی با استانداردهای جهانی.">
+<meta name="twitter:image" content="https://www.netrestart.ir/images/network-2.png">
+
+<!-- Structured Data / JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "NetRestart",
+  "url": "https://www.netrestart.ir/",
+  "logo": "https://www.netrestart.ir/images/network-2.png",
+  "sameAs": [
+    "https://www.instagram.com/NetRestart/",
+    "https://www.linkedin.com/company/NetRestart/"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+989013939128",
+    "contactType": "customer service",
+    "areaServed": "IR",
+    "availableLanguage": ["fa", "en"]
+  }
+}
+</script>
+
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
 <style>
   body { 
     background-color: #0c1724; 
@@ -21,8 +66,6 @@
   .card:hover { transform: translateY(-6px); transition: 0.3s ease-in-out; }
   .section-title { color: #38bdf8; font-size: 2rem; font-weight: 700; margin-bottom: 2rem; text-align: center; }
   #mobile-menu { transition: .3s ease-in-out; }
-
-  /* هدر با بک‌گراند و overlay */
   .bg-header {
     background-image: url('images/network-2.png');
     background-size: cover;
@@ -30,7 +73,6 @@
     background-repeat: no-repeat;
     position: relative;
   }
-
   .bg-overlay {
     background: linear-gradient(to bottom, rgba(13,28,51,0.7), rgba(10,20,36,0.8));
     position: absolute;
@@ -39,8 +81,6 @@
     width: 100%;
     height: 100%;
   }
-
-  /* تصویر پشت متن کوتاه هدر */
   .text-bg {
     position: absolute;
     inset: 0;
@@ -253,7 +293,6 @@
   function openMenu() { document.getElementById("mobile-menu").classList.remove("hidden"); }
   function closeMenu() { document.getElementById("mobile-menu").classList.add("hidden"); }
 
-  // قابلیت کپی و تماس روی شماره تلفن‌ها
   document.querySelectorAll('.phone').forEach(el => {
     el.style.cursor = 'pointer';
     el.addEventListener('click', () => {
